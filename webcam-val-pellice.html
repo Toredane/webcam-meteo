@@ -27,6 +27,10 @@
   .link-only a{color:var(--accent);font-size:.85rem;text-decoration:none;white-space:nowrap;margin-left:12px}
   .badge{display:inline-block;font-size:.68rem;padding:2px 6px;border-radius:5px;background:#33260f;color:var(--warn);margin-left:6px}
   .note{background:#20272d;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;color:var(--muted);font-size:.85rem;margin:16px 0}
+  .log{color:var(--muted);font-size:.72rem;margin-top:30px;border-top:1px solid var(--border);padding-top:10px}
+  .log h3{font-size:.72rem;color:var(--muted);margin:0 0 6px;text-transform:uppercase;letter-spacing:.03em;font-weight:600}
+  .log ul{margin:0;padding-left:16px}
+  .log li{margin-bottom:4px;line-height:1.4}
   button.refresh{background:var(--accent);color:#0b0d0f;border:none;padding:8px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem}
 </style>
 </head>
@@ -50,8 +54,8 @@
   <div class="cam">
     <img data-src="http://rifugipiemonte.cmstino.com/webcam/webcamvalpe01/vaccera.jpg" alt="Angrogna - Rifugio La Jumarre">
     <div class="body">
-      <div class="name">Angrogna</div>
-      <div class="desc">Veduta dal Rifugio La Jumarre (Vaccera)</div>
+      <div class="name">Angrogna <span class="badge">non raggiungibile</span></div>
+      <div class="desc">Veduta dal Rifugio La Jumarre (Vaccera) — URL attualmente rotto, in verifica</div>
       <div class="meta"><a class="open" href="http://rifugipiemonte.cmstino.com/webcam/webcamvalpe01/vaccera.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
     </div>
   </div>
@@ -72,11 +76,11 @@
     </div>
   </div>
   <div class="cam">
-    <img data-src="http://www.campeggiolaroccia.it/images/webcam/cam.jpg" alt="Bobbio Pellice - Campeggio La Roccia">
+    <img data-src="https://www.campeggiolaroccia.it/webcam/webcam.jpg" alt="Bobbio Pellice - Campeggio La Roccia">
     <div class="body">
       <div class="name">Bobbio Pellice</div>
       <div class="desc">Veduta dal campeggio di Bobbio Pellice</div>
-      <div class="meta"><a class="open" href="http://www.campeggiolaroccia.it/images/webcam/cam.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+      <div class="meta"><a class="open" href="https://www.campeggiolaroccia.it/webcam/webcam.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
     </div>
   </div>
   <div class="cam">
@@ -107,7 +111,7 @@
     <img data-src="https://www.alpimedia.it/webcam/montoso.jpg" alt="Bagnolo Piemonte - Montoso, Piazza Frioland">
     <div class="body">
       <div class="name">Bagnolo Piemonte <span class="badge">Montoso</span></div>
-      <div class="desc">Piazza Frioland a Montoso (comune confinante con Luserna San Giovanni)</div>
+      <div class="desc">Piazza Frioland a Montoso (comune limitrofo alla Val Pellice)</div>
       <div class="meta"><a class="open" href="https://www.alpimedia.it/webcam/montoso.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
     </div>
   </div>
@@ -140,7 +144,15 @@
 </div>
 
 <div class="note">
-Lista verificata e completata sulla fonte ufficiale del Comprensorio Alpino TO1 (Valli Pellice, Chisone e Germanasca): tutte le 7 webcam del suo elenco Val Pellice sono ora incluse, più le 2 di Bagnolo Piemonte/Montoso (comune confinante con Luserna San Giovanni) trovate sul portale della Provincia di Cuneo.
+Copertura attuale: Angrogna, Bobbio Pellice, Torre Pellice, Villar Pellice — l'asse principale della Val Pellice, verificato sulla fonte ufficiale del Comprensorio Alpino TO1. Bagnolo Piemonte/Montoso incluso come comune limitrofo. San Pietro Val Lemina, Rocca Bera e Prarostino restano come pagina con feed, non embeddabili direttamente.
+</div>
+
+<div class="log">
+<h3>Log manutenzione</h3>
+<ul>
+  <li>20/08/2026 — Creazione pagina; lista verificata e completata sulla fonte ufficiale del Comprensorio Alpino TO1 (7 webcam Val Pellice) più Bagnolo Piemonte/Montoso dalla Provincia di Cuneo.</li>
+  <li>20/08/2026 — Segnalati 2 link rotti. Bobbio Pellice/Campeggio La Roccia: sito rifatto, URL aggiornato a campeggiolaroccia.it/webcam/webcam.jpg — risolto. Angrogna/Rifugio La Jumarre: nessuna fonte alternativa trovata, marcato "non raggiungibile" in attesa di novità.</li>
+</ul>
 </div>
 
 <script>
