@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Webcam meteo — Val Po</title>
+<style>
+  :root{
+    --bg:#14181c; --card:#1e242a; --text:#e8ecef; --muted:#9aa5ad; --accent:#5fb3ff; --border:#2a3138; --warn:#e0a83a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:24px 16px 60px}
+  h1{font-size:1.4rem;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  h2{font-size:1.05rem;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+  .cam{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .cam img{width:100%;display:block;background:#0b0d0f;aspect-ratio:4/3;object-fit:cover}
+  .cam .body{padding:10px 12px}
+  .cam .name{font-weight:600;font-size:.95rem}
+  .cam .desc{color:var(--muted);font-size:.82rem;margin-top:2px}
+  .cam .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .cam a.open{font-size:.78rem;color:var(--accent);text-decoration:none}
+  .cam .ts{font-size:.72rem;color:var(--muted)}
+  .note{background:#20272d;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;color:var(--muted);font-size:.85rem;margin:16px 0}
+  button.refresh{background:var(--accent);color:#0b0d0f;border:none;padding:8px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem}
+</style>
+</head>
+<body>
+
+<h1>Webcam meteo — Val Po</h1>
+<div class="sub">Fonte: Provincia di Cuneo (portale webcam istituzionale). URL diretti alle immagini, nessun sito/portale intermedio con pubblicità o tracciamento. Aggiornamento immagini ogni 5 minuti.</div>
+
+<button class="refresh" onclick="location.reload()">Aggiorna ora</button>
+
+<h2>Crissolo</h2>
+<div class="grid">
+  <div class="cam">
+    <img data-src="https://monvisoski.etinet.it/Monviso.jpg" alt="Crissolo - il Monviso da Pian della Regina">
+    <div class="body">
+      <div class="name">Crissolo</div>
+      <div class="desc">Il Monviso da Pian della Regina</div>
+      <div class="meta"><a class="open" href="https://monvisoski.etinet.it/Monviso.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://monvisoski.etinet.it/locanda.jpg" alt="Crissolo - Rifugio Pian della Regina">
+    <div class="body">
+      <div class="name">Crissolo</div>
+      <div class="desc">Rifugio Pian della Regina</div>
+      <div class="meta"><a class="open" href="https://monvisoski.etinet.it/locanda.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.comune.crissolo.cn.it/cgi-bin/webcam/webcam/current.jpg" alt="Crissolo - Piazza Umberto I">
+    <div class="body">
+      <div class="name">Crissolo</div>
+      <div class="desc">Piazza Umberto I</div>
+      <div class="meta"><a class="open" href="https://www.comune.crissolo.cn.it/cgi-bin/webcam/webcam/current.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Oncino</h2>
+<div class="grid">
+  <div class="cam">
+    <img data-src="https://www.alpimedia.it/webcam/serre.jpg" alt="Oncino - Borgata Serre">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">Borgata Serre</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.it/webcam/serre.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.alpimedia.it/webcam/caus.jpg" alt="Oncino - Borgata Caus">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">Borgata Caus</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.it/webcam/caus.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.alpimedia.com/webcam/Serre-monviso.jpg" alt="Oncino">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">Vista Serre / Monviso</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.com/webcam/Serre-monviso.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.alpimedia.com/webcam/Bigorie-pistadafondo.jpg" alt="Oncino - Bigorie pista da fondo">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">Bigorie, pista da fondo</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.com/webcam/Bigorie-pistadafondo.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.alpimedia.it/webcam/foto001m.jpg" alt="Oncino - Vista Monviso">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">Vista Monviso</div>
+      <div class="meta"><a class="open" href="http://www.alpimedia.it/webcam/foto001m.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.alpimedia.it/webcam/foto002m.jpg" alt="Oncino - La Vilo">
+    <div class="body">
+      <div class="name">Oncino</div>
+      <div class="desc">La Vilo</div>
+      <div class="meta"><a class="open" href="http://www.alpimedia.it/webcam/foto002m.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Ostana</h2>
+<div class="grid">
+  <div class="cam">
+    <img data-src="http://www.meteoostana.altervista.org/webcam/current.jpg" alt="Ostana - Durandin">
+    <div class="body">
+      <div class="name">Ostana</div>
+      <div class="desc">Località Durandin — Agriturismo A Nostro Mizoun</div>
+      <div class="meta"><a class="open" href="http://www.meteoostana.altervista.org/webcam/current.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Paesana</h2>
+<div class="grid">
+  <div class="cam">
+    <img data-src="http://46.37.31.121/infogate.it/webcam-meteo/images/webcams/Ct01.jpg" alt="Paesana - Vista sul Monviso">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Vista sul Monviso</div>
+      <div class="meta"><a class="open" href="http://46.37.31.121/infogate.it/webcam-meteo/images/webcams/Ct01.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.pianmune.it//system/uploads/otras/VistaConcaFontanone.jpg" alt="Paesana - Conca Fontanone">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Vista Conca Fontanone (Pian Munè)</div>
+      <div class="meta"><a class="open" href="https://webcam.pianmune.it//system/uploads/otras/VistaConcaFontanone.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.pianmune.it//system/uploads/otras/Seggiovia.jpg" alt="Paesana - Monte Seggiovia">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Monte Seggiovia (Pian Munè)</div>
+      <div class="meta"><a class="open" href="https://webcam.pianmune.it//system/uploads/otras/Seggiovia.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.pianmune.it//system/uploads/otras/TappetoMonteSendua.jpg" alt="Paesana - Tappeto Sendua">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Tappeto Sendua (Pian Munè)</div>
+      <div class="meta"><a class="open" href="https://webcam.pianmune.it//system/uploads/otras/TappetoMonteSendua.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.pianmune.it//system/uploads/otras/ColleGilba.jpg" alt="Paesana - Colle di Gilba">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Pian Pilun — Colle di Gilba (Pian Munè)</div>
+      <div class="meta"><a class="open" href="https://webcam.pianmune.it//system/uploads/otras/ColleGilba.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.pianmune.it//system/uploads/otras/Monviso.jpg" alt="Paesana - Punta Monviso">
+    <div class="body">
+      <div class="name">Paesana</div>
+      <div class="desc">Punta Monviso (Pian Munè)</div>
+      <div class="meta"><a class="open" href="https://webcam.pianmune.it//system/uploads/otras/Monviso.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+Copertura attuale: Crissolo, Oncino, Ostana, Paesana — l'alta Val Po, dalla sorgente ai piedi del Monviso. Il tratto più a valle (Sanfront, Barge, Envie, verso la pianura) non è ancora incluso e può essere aggiunto in un prossimo giro.
+</div>
+
+<script>
+  function refreshImages(){
+    document.querySelectorAll('.cam img[data-src]').forEach(img => {
+      const base = img.getAttribute('data-src');
+      img.src = base + (base.includes('?') ? '&' : '?') + '_=' + Date.now();
+    });
+    const now = new Date().toLocaleTimeString('it-IT');
+    document.querySelectorAll('.ts').forEach(el => el.textContent = 'agg. ' + now);
+  }
+  refreshImages();
+  setInterval(refreshImages, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Webcam meteo — Val Pellice</title>
+<style>
+  :root{
+    --bg:#14181c; --card:#1e242a; --text:#e8ecef; --muted:#9aa5ad; --accent:#5fb3ff; --border:#2a3138; --warn:#e0a83a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:24px 16px 60px}
+  h1{font-size:1.4rem;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  h2{font-size:1.05rem;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+  .cam{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .cam img{width:100%;display:block;background:#0b0d0f;aspect-ratio:4/3;object-fit:cover}
+  .cam .body{padding:10px 12px}
+  .cam .name{font-weight:600;font-size:.95rem}
+  .cam .desc{color:var(--muted);font-size:.82rem;margin-top:2px}
+  .cam .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .cam a.open{font-size:.78rem;color:var(--accent);text-decoration:none}
+  .cam .ts{font-size:.72rem;color:var(--muted)}
+  .link-only{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  .link-only .name{font-weight:600;font-size:.95rem}
+  .link-only .desc{color:var(--muted);font-size:.82rem}
+  .link-only a{color:var(--accent);font-size:.85rem;text-decoration:none;white-space:nowrap;margin-left:12px}
+  .badge{display:inline-block;font-size:.68rem;padding:2px 6px;border-radius:5px;background:#33260f;color:var(--warn);margin-left:6px}
+  .note{background:#20272d;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;color:var(--muted);font-size:.85rem;margin:16px 0}
+  button.refresh{background:var(--accent);color:#0b0d0f;border:none;padding:8px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem}
+</style>
+</head>
+<body>
+
+<h1>Webcam meteo — Val Pellice</h1>
+<div class="sub">Fonti: Comprensorio Alpino TO1 e Unione Montana del Pinerolese (enti istituzionali). URL diretti alle immagini, nessun sito/portale intermedio con pubblicità o tracciamento. Aggiornamento immagini ogni 5 minuti.</div>
+
+<button class="refresh" onclick="location.reload()">Aggiorna ora</button>
+
+<h2>Val Pellice — immagine diretta (embeddabile)</h2>
+<div class="grid" id="live-grid">
+  <div class="cam">
+    <img data-src="http://www.kapra.it/webcam/webcam.jpg" alt="Angrogna - Colle Vaccera">
+    <div class="body">
+      <div class="name">Angrogna</div>
+      <div class="desc">Veduta sull'alta Val Pellice dai pressi del Colle Vaccera</div>
+      <div class="meta"><a class="open" href="http://www.kapra.it/webcam/webcam.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://rifugipiemonte.cmstino.com/webcam/webcamvalpe01/vaccera.jpg" alt="Angrogna - Rifugio La Jumarre">
+    <div class="body">
+      <div class="name">Angrogna</div>
+      <div class="desc">Veduta dal Rifugio La Jumarre (Vaccera)</div>
+      <div class="meta"><a class="open" href="http://rifugipiemonte.cmstino.com/webcam/webcamvalpe01/vaccera.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.umpinerolese.it/cgi-bin/webcam/barant.jpg" alt="Bobbio Pellice - Rifugio Barant">
+    <div class="body">
+      <div class="name">Bobbio Pellice <span class="badge">solo estate</span></div>
+      <div class="desc">Vista dal Rifugio Barant</div>
+      <div class="meta"><a class="open" href="https://www.umpinerolese.it/cgi-bin/webcam/barant.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.jervis.it/webcam/wc1280.jpg" alt="Bobbio Pellice - Rifugio Jervis">
+    <div class="body">
+      <div class="name">Bobbio Pellice</div>
+      <div class="desc">Conca del Prà, dal Rifugio Jervis</div>
+      <div class="meta"><a class="open" href="https://www.jervis.it/webcam/wc1280.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.campeggiolaroccia.it/images/webcam/cam.jpg" alt="Bobbio Pellice - Campeggio La Roccia">
+    <div class="body">
+      <div class="name">Bobbio Pellice</div>
+      <div class="desc">Veduta dal campeggio di Bobbio Pellice</div>
+      <div class="meta"><a class="open" href="http://www.campeggiolaroccia.it/images/webcam/cam.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://content.meteobridge.com/cam/0508a562bbd3ee76671d4d0f2249ea59/camplus.jpg" alt="Torre Pellice - Monte Vandalino">
+    <div class="body">
+      <div class="name">Torre Pellice</div>
+      <div class="desc">Vista sul Monte Vandalino (Liceo Valdese)</div>
+      <div class="meta"><a class="open" href="http://content.meteobridge.com/cam/0508a562bbd3ee76671d4d0f2249ea59/camplus.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://content.meteobridge.com/cam/d73be7a6de6eab9eeaf482fc0115d7f9/camplus.jpg" alt="Villar Pellice - Alta Valle">
+    <div class="body">
+      <div class="name">Villar Pellice</div>
+      <div class="desc">Veduta sull'alta Valle, verso Bobbio</div>
+      <div class="meta"><a class="open" href="https://content.meteobridge.com/cam/d73be7a6de6eab9eeaf482fc0115d7f9/camplus.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://webcam.soluzionimeteo.it/villarpellice/webcam.jpg" alt="Villar Pellice - Bassa Valle">
+    <div class="body">
+      <div class="name">Villar Pellice</div>
+      <div class="desc">Vista verso la bassa Valle e il paese</div>
+      <div class="meta"><a class="open" href="https://webcam.soluzionimeteo.it/villarpellice/webcam.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.alpimedia.it/webcam/montoso.jpg" alt="Bagnolo Piemonte - Montoso, Piazza Frioland">
+    <div class="body">
+      <div class="name">Bagnolo Piemonte <span class="badge">Montoso</span></div>
+      <div class="desc">Piazza Frioland a Montoso (comune confinante con Luserna San Giovanni)</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.it/webcam/montoso.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.alpimedia.it/webcam/rucas.jpg" alt="Bagnolo Piemonte - Rumella a Montoso">
+    <div class="body">
+      <div class="name">Bagnolo Piemonte <span class="badge">Montoso</span></div>
+      <div class="desc">Vista Rumella a Montoso</div>
+      <div class="meta"><a class="open" href="https://www.alpimedia.it/webcam/rucas.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Val Pellice — pagina con feed (non embeddabile direttamente)</h2>
+<div class="link-only">
+  <div><div class="name">San Pietro Val Lemina</div><div class="desc">Vista del centro paese — Pro Loco S. Pietro V.L.</div></div>
+  <a href="https://www.lemina.it/webcam.html" target="_blank">apri ↗</a>
+</div>
+<div class="link-only">
+  <div><div class="name">Torre Pellice / Rorà — Rocca Bera</div><div class="desc">Panorama sull'alta Val Pellice (rete Bandablu)</div></div>
+  <a href="https://webcam2.bandablu.it/ccee2dbf-7635-4c4e-8c81-6a0369692850.html" target="_blank">apri ↗</a>
+</div>
+<div class="link-only">
+  <div><div class="name">Prarostino — Bric Boi</div><div class="desc">Vista sulla bassa Val Pellice (rete Bandablu)</div></div>
+  <a href="https://webcam2.bandablu.it/9cfd1544-7ea1-414b-9c3e-74595a92c371.html" target="_blank">apri ↗</a>
+</div>
+<div class="link-only">
+  <div><div class="name">Angrogna — Bagnou</div><div class="desc">Vista sulla bassa valle (rete Bandablu)</div></div>
+  <a href="https://webcam2.bandablu.it/8c4e20e6-57af-4773-90ec-ad41d2c1caf5.html" target="_blank">apri ↗</a>
+</div>
+
+<div class="note">
+Lista verificata e completata sulla fonte ufficiale del Comprensorio Alpino TO1 (Valli Pellice, Chisone e Germanasca): tutte le 7 webcam del suo elenco Val Pellice sono ora incluse, più le 2 di Bagnolo Piemonte/Montoso (comune confinante con Luserna San Giovanni) trovate sul portale della Provincia di Cuneo.
+</div>
+
+<script>
+  function refreshImages(){
+    document.querySelectorAll('.cam img[data-src]').forEach(img => {
+      const base = img.getAttribute('data-src');
+      img.src = base + (base.includes('?') ? '&' : '?') + '_=' + Date.now();
+    });
+    const now = new Date().toLocaleTimeString('it-IT');
+    document.querySelectorAll('.ts').forEach(el => el.textContent = 'agg. ' + now);
+  }
+  refreshImages();
+  setInterval(refreshImages, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Webcam meteo — Val Chisone e Val Germanasca</title>
+<style>
+  :root{
+    --bg:#14181c; --card:#1e242a; --text:#e8ecef; --muted:#9aa5ad; --accent:#5fb3ff; --border:#2a3138; --warn:#e0a83a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;padding:24px 16px 60px}
+  h1{font-size:1.4rem;margin:0 0 4px}
+  .sub{color:var(--muted);font-size:.9rem;margin-bottom:24px}
+  h2{font-size:1.05rem;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:6px;margin-top:36px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-top:14px}
+  .cam{background:var(--card);border:1px solid var(--border);border-radius:10px;overflow:hidden}
+  .cam img{width:100%;display:block;background:#0b0d0f;aspect-ratio:4/3;object-fit:cover}
+  .cam .body{padding:10px 12px}
+  .cam .name{font-weight:600;font-size:.95rem}
+  .cam .desc{color:var(--muted);font-size:.82rem;margin-top:2px}
+  .cam .meta{display:flex;justify-content:space-between;align-items:center;margin-top:8px}
+  .cam a.open{font-size:.78rem;color:var(--accent);text-decoration:none}
+  .cam .ts{font-size:.72rem;color:var(--muted)}
+  .link-only{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+  .link-only .name{font-weight:600;font-size:.95rem}
+  .link-only .desc{color:var(--muted);font-size:.82rem}
+  .link-only a{color:var(--accent);font-size:.85rem;text-decoration:none;white-space:nowrap;margin-left:12px}
+  .badge{display:inline-block;font-size:.68rem;padding:2px 6px;border-radius:5px;background:#33260f;color:var(--warn);margin-left:6px}
+  .note{background:#20272d;border-left:3px solid var(--accent);padding:10px 14px;border-radius:6px;color:var(--muted);font-size:.85rem;margin:16px 0}
+  button.refresh{background:var(--accent);color:#0b0d0f;border:none;padding:8px 16px;border-radius:6px;font-weight:600;cursor:pointer;font-size:.85rem}
+</style>
+</head>
+<body>
+
+<h1>Webcam meteo — Val Chisone e Val Germanasca</h1>
+<div class="sub">Fonte: Comprensorio Alpino TO1 (Valli Pellice, Chisone, Germanasca) — ente istituzionale. URL diretti alle immagini, nessun sito/portale intermedio con pubblicità o tracciamento. Aggiornamento immagini ogni 5 minuti.</div>
+
+<button class="refresh" onclick="location.reload()">Aggiorna ora</button>
+
+<h2>Val Chisone — immagine diretta (embeddabile)</h2>
+<div class="grid" id="live-grid">
+  <div class="cam">
+    <img data-src="https://www.dariogeographic.it/webcam1.jpg" alt="Villar Perosa - San Germano e Gran Truc">
+    <div class="body">
+      <div class="name">Villar Perosa</div>
+      <div class="desc">Vista verso San Germano e il Gran Truc</div>
+      <div class="meta"><a class="open" href="https://www.dariogeographic.it/webcam1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.valchisone.it/web/valchi1.jpg" alt="Villar Perosa - Bocciarda">
+    <div class="body">
+      <div class="name">Villar Perosa</div>
+      <div class="desc">Vista verso Bocciarda</div>
+      <div class="meta"><a class="open" href="http://www.valchisone.it/web/valchi1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.comune.perosaargentina.to.it/cgi-bin/webcam/Perosa_Argentina.jpg" alt="Perosa Argentina">
+    <div class="body">
+      <div class="name">Perosa Argentina</div>
+      <div class="desc">Vista verso l'imbocco della Val Germanasca</div>
+      <div class="meta"><a class="open" href="https://www.comune.perosaargentina.to.it/cgi-bin/webcam/Perosa_Argentina.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://admin.meteobridge.com/cam/b036e74dfc4f9cfaab73d4e9bf42a16f/camplus.jpg" alt="Roure - Villaretto">
+    <div class="body">
+      <div class="name">Roure</div>
+      <div class="desc">Vista su Villaretto</div>
+      <div class="meta"><a class="open" href="https://admin.meteobridge.com/cam/b036e74dfc4f9cfaab73d4e9bf42a16f/camplus.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.rifugioselleries.it/public/selleries.jpg" alt="Roure - Rifugio Sellerie verso valle">
+    <div class="body">
+      <div class="name">Roure</div>
+      <div class="desc">Rifugio Sellerie, vista verso valle</div>
+      <div class="meta"><a class="open" href="https://www.rifugioselleries.it/public/selleries.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.rifugioselleries.it/public/selleries2.jpg" alt="Roure - Rifugio Sellerie verso monte">
+    <div class="body">
+      <div class="name">Roure</div>
+      <div class="desc">Rifugio Sellerie, vista verso monte</div>
+      <div class="meta"><a class="open" href="http://www.rifugioselleries.it/public/selleries2.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://www.meteosystem.com/webcam/fenestrelle/pequerel.jpg" alt="Fenestrelle - Pequerel">
+    <div class="body">
+      <div class="name">Fenestrelle</div>
+      <div class="desc">Pequerel, vista verso monte</div>
+      <div class="meta"><a class="open" href="http://www.meteosystem.com/webcam/fenestrelle/pequerel.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.rifugiolagodellerane.it/webcam/lagorane2.jpg" alt="Usseaux - Lago delle Rane verso colle delle Finestre">
+    <div class="body">
+      <div class="name">Usseaux</div>
+      <div class="desc">Lago delle Rane, vista verso il Colle delle Finestre</div>
+      <div class="meta"><a class="open" href="https://www.rifugiolagodellerane.it/webcam/lagorane2.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.rifugiolagodellerane.it/webcam/lagorane1.jpg" alt="Usseaux - Lago delle Rane verso valle">
+    <div class="body">
+      <div class="name">Usseaux</div>
+      <div class="desc">Lago delle Rane, vista verso valle</div>
+      <div class="meta"><a class="open" href="https://www.rifugiolagodellerane.it/webcam/lagorane1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.comune.pragelato.to.it/wcam/image3.jpg" alt="Pragelato - Val Troncea">
+    <div class="body">
+      <div class="name">Pragelato</div>
+      <div class="desc">Vista dal Duc verso la Val Troncea</div>
+      <div class="meta"><a class="open" href="https://www.comune.pragelato.to.it/wcam/image3.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="http://193.105.228.157:8080/snap.jpeg" alt="Fenestrelle - Forte">
+    <div class="body">
+      <div class="name">Fenestrelle <span class="badge">IP diretta</span></div>
+      <div class="desc">Vista sul forte — snapshot da IP camera, può risultare instabile</div>
+      <div class="meta"><a class="open" href="http://193.105.228.157:8080/snap.jpeg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Val Germanasca — immagine diretta (embeddabile)</h2>
+<div class="grid">
+  <div class="cam">
+    <img data-src="https://www.comune.perrero.to.it/cgi-bin/webcam/perrero_grande.jpg" alt="Perrero - centro paese">
+    <div class="body">
+      <div class="name">Perrero</div>
+      <div class="desc">Vista sul centro del paese</div>
+      <div class="meta"><a class="open" href="https://www.comune.perrero.to.it/cgi-bin/webcam/perrero_grande.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/malzat.jpg" alt="Prali - Malzat">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Malzat, partenza impianti</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/malzat.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/ciatlet.jpg" alt="Prali - Ciatlet">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Panorama dal Ciatlet</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/ciatlet.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/capannina.jpg" alt="Prali - Capannina verso Bric Rond">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Vista dalla Capannina verso Bric Rond</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/capannina.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/bricrond.jpg" alt="Prali - Bric Rond verso valle">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Vista da Bric Rond verso valle</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/bricrond.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/bardour1.jpg" alt="Ghigo di Prali">
+    <div class="body">
+      <div class="name">Ghigo di Prali</div>
+      <div class="desc">Vista sulla frazione</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/bardour1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/capannina1.jpg" alt="Prali - Bric Rond dalla Capannina">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Bric Rond dalla Capannina</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/capannina1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+  <div class="cam">
+    <img data-src="https://www.nuova13laghi.com/webcam/bricrond1.jpg" alt="Prali - Tredici Laghi da Bric Rond">
+    <div class="body">
+      <div class="name">Prali</div>
+      <div class="desc">Tredici Laghi da Bric Rond</div>
+      <div class="meta"><a class="open" href="https://www.nuova13laghi.com/webcam/bricrond1.jpg" target="_blank">apri originale ↗</a><span class="ts"></span></div>
+    </div>
+  </div>
+</div>
+
+<h2>Val Chisone / Val Germanasca — pagina con feed (non embeddabile direttamente)</h2>
+<div class="link-only">
+  <div><div class="name">Pragelato — Soucheres Basses</div><div class="desc">Neve/meteo in tempo reale, Monte Albergian</div></div>
+  <a href="https://www.chaletdesarts.com/webcam-pragelato-sestriere-real-time-snow-weather-soucheres-basses-monte-albergian/?lang=it" target="_blank">apri ↗</a>
+</div>
+<div class="link-only">
+  <div><div class="name">Pragelato — Trampolini</div><div class="desc">Webcam vialattea, comprensorio trampolini</div></div>
+  <a href="https://www.webcamvialattea.it/webcam/museo/" target="_blank">apri ↗</a>
+</div>
+<div class="link-only">
+  <div><div class="name">Pragelato — Pista da fondo</div><div class="desc">Webcam vialattea, pista da fondo</div></div>
+  <a href="https://www.webcamvialattea.it/webcam/pista-fondo/" target="_blank">apri ↗</a>
+</div>
+
+<div class="note">
+Copertura attuale: Villar Perosa, Perosa Argentina, Roure, Fenestrelle, Usseaux, Pragelato per la Val Chisone; Perrero e Prali per la Val Germanasca — entrambe verificate sulla fonte ufficiale del Comprensorio Alpino TO1. L'Alta Val Susa (Sestriere, Bardonecchia) resta fuori, coperta da altri portali/enti, e può essere aggiunta in un prossimo giro.
+</div>
+
+<script>
+  function refreshImages(){
+    document.querySelectorAll('.cam img[data-src]').forEach(img => {
+      const base = img.getAttribute('data-src');
+      img.src = base + (base.includes('?') ? '&' : '?') + '_=' + Date.now();
+    });
+    const now = new Date().toLocaleTimeString('it-IT');
+    document.querySelectorAll('.ts').forEach(el => el.textContent = 'agg. ' + now);
+  }
+  refreshImages();
+  setInterval(refreshImages, 5 * 60 * 1000);
+</script>
+
+</body>
+</html>
